@@ -10,6 +10,24 @@ import UIKit
 
 class storeInfoViewController: UIViewController {
 
+    @IBOutlet var phoneButton: UIButton!
+    
+    @IBAction func numberButton(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Phone Number", message: "248-915-9809", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertController.addAction(UIAlertAction(title: "Call Store", style: .default, handler: { (ACTION) in
+            
+            print("button pressed")
+            
+           
+            
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -10,6 +10,12 @@ import UIKit
 
 class listOfStoreTableViewCell: UITableViewCell {
 
+    @IBOutlet var storePicImage: UIImageView!
+    
+    @IBOutlet var storeNameLabel: UILabel!
+    
+    @IBOutlet var storePricesLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

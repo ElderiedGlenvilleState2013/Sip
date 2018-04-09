@@ -9,7 +9,12 @@
 import UIKit
 
 class listTableViewCell: UITableViewCell {
-
+   
+    @IBOutlet var priceAndStoreNameLabel: UILabel!
+    
+    @IBOutlet var storeListImage: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

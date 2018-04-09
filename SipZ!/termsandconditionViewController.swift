@@ -10,12 +10,29 @@ import UIKit
 
 class termsandconditionViewController: UIViewController {
 
+    @IBAction func noButton(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Are Sure Don't Agree ", message: "To our terms and Conditions", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertController.addAction(UIAlertAction(title: "Are you sure?", style: .default, handler: {(action) in
+            
+            print("Button Press is no")
+            
+            self.dismiss(animated: true, completion: nil)
+            
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+  
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

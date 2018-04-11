@@ -25,5 +25,9 @@ class listTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    func updateViews(store: Store) {
+        storeListImage.image = UIImage(named: store.imageName)
+        priceAndStoreNameLabel.text = store.title
+    }
+    
 }

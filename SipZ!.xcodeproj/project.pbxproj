@@ -10,6 +10,10 @@
 		DA45EADC2075E7F9001139D8 /* listTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA45EADB2075E7F9001139D8 /* listTableViewCell.swift */; };
 		DA45EADE2075EA21001139D8 /* listViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA45EADD2075EA21001139D8 /* listViewController.swift */; };
 		DA45EAE02075F665001139D8 /* storeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA45EADF2075F665001139D8 /* storeInfoViewController.swift */; };
+		DAB2CF4F207D725800150310 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CF4E207D725800150310 /* Products.swift */; };
+		DAB2CF51207D732D00150310 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CF50207D732D00150310 /* Store.swift */; };
+		DAB2CF54207D792700150310 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CF53207D792700150310 /* DataService.swift */; };
+		DAB2CF56207D796D00150310 /* drinksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB2CF55207D796D00150310 /* drinksCell.swift */; };
 		DABCD52D207484F80040374E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABCD52C207484F80040374E /* AppDelegate.swift */; };
 		DABCD52F207484F80040374E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABCD52E207484F80040374E /* ViewController.swift */; };
 		DABCD532207484F80040374E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABCD530207484F80040374E /* Main.storyboard */; };
@@ -24,6 +28,10 @@
 		DA45EADB2075E7F9001139D8 /* listTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listTableViewCell.swift; sourceTree = "<group>"; };
 		DA45EADD2075EA21001139D8 /* listViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listViewController.swift; sourceTree = "<group>"; };
 		DA45EADF2075F665001139D8 /* storeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storeInfoViewController.swift; sourceTree = "<group>"; };
+		DAB2CF4E207D725800150310 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		DAB2CF50207D732D00150310 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		DAB2CF53207D792700150310 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		DAB2CF55207D796D00150310 /* drinksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drinksCell.swift; sourceTree = "<group>"; };
 		DABCD529207484F80040374E /* SipZ!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SipZ!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABCD52C207484F80040374E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DABCD52E207484F80040374E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DAB2CF4B207D714A00150310 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA45EADF2075F665001139D8 /* storeInfoViewController.swift */,
+				DABCD54120748CD60040374E /* termsandconditionViewController.swift */,
+				DABCD543207496E80040374E /* storeViewController.swift */,
+				DA45EADD2075EA21001139D8 /* listViewController.swift */,
+				DABCD52E207484F80040374E /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DAB2CF4C207D71C900150310 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA45EADB2075E7F9001139D8 /* listTableViewCell.swift */,
+				DAB2CF55207D796D00150310 /* drinksCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DAB2CF4D207D723F00150310 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAB2CF4E207D725800150310 /* Products.swift */,
+				DAB2CF50207D732D00150310 /* Store.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DAB2CF52207D787C00150310 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DAB2CF53207D792700150310 /* DataService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		DABCD520207484F80040374E = {
 			isa = PBXGroup;
 			children = (
@@ -66,17 +112,15 @@
 		DABCD52B207484F80040374E /* SipZ! */ = {
 			isa = PBXGroup;
 			children = (
+				DAB2CF52207D787C00150310 /* Service */,
 				DABCD52C207484F80040374E /* AppDelegate.swift */,
-				DABCD52E207484F80040374E /* ViewController.swift */,
+				DAB2CF4B207D714A00150310 /* Controller */,
 				DABCD530207484F80040374E /* Main.storyboard */,
-				DA45EADB2075E7F9001139D8 /* listTableViewCell.swift */,
-				DABCD543207496E80040374E /* storeViewController.swift */,
-				DA45EADF2075F665001139D8 /* storeInfoViewController.swift */,
-				DA45EADD2075EA21001139D8 /* listViewController.swift */,
-				DABCD54120748CD60040374E /* termsandconditionViewController.swift */,
-				DABCD536207484FB0040374E /* Assets.xcassets */,
+				DAB2CF4C207D71C900150310 /* View */,
+				DAB2CF4D207D723F00150310 /* Model */,
 				DABCD538207484FB0040374E /* LaunchScreen.storyboard */,
 				DABCD53B207484FB0040374E /* Info.plist */,
+				DABCD536207484FB0040374E /* Assets.xcassets */,
 				DABCD533207484F80040374E /* SipZ_.xcdatamodeld */,
 			);
 			path = "SipZ!";
@@ -158,8 +202,12 @@
 				DA45EADE2075EA21001139D8 /* listViewController.swift in Sources */,
 				DABCD544207496E80040374E /* storeViewController.swift in Sources */,
 				DABCD52F207484F80040374E /* ViewController.swift in Sources */,
+				DAB2CF54207D792700150310 /* DataService.swift in Sources */,
+				DAB2CF51207D732D00150310 /* Store.swift in Sources */,
 				DA45EADC2075E7F9001139D8 /* listTableViewCell.swift in Sources */,
 				DABCD535207484F80040374E /* SipZ_.xcdatamodeld in Sources */,
+				DAB2CF4F207D725800150310 /* Products.swift in Sources */,
+				DAB2CF56207D796D00150310 /* drinksCell.swift in Sources */,
 				DABCD52D207484F80040374E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

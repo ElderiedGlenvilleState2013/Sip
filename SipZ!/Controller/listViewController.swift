@@ -46,42 +46,50 @@ class listViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    
-    
-    
-    
-     public func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 4
-        
-        
-    }
-
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 180
         
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        return DataService.instance.getStores().count
         
     }
+    
+    
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! listTableViewCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? listTableViewCell {
+           
+            let store = DataService.instance.getStores()[indexPath.row]
+            cell.updateViews(store: store)
+            return cell
+            
+        } else {
+            return listTableViewCell()
+        }
         
-        cell.storeListImage.image = UIImage(named: "Bunghole")
+       
         
-        cell.priceAndStoreNameLabel.text = "Store one $12.00min"
-        
-        
-        return cell
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let stores = DataService.instance.getStores()[indexPath.row]
         
-        return 4
+        performSegue(withIdentifier: "storeInfoViewController", sender: stores)
         
     }
     
+    override func prepare(for seque: UIStoryboardSegue, sender: Any?) {
+        if let storeInfoViewController = seque.destination as? storeInfoViewController {
+            assert(sender as? Store != nil)
+            storeInfoViewController.initDrinkProduct(store: sender as! Store)
+        }
+    }
 }
 

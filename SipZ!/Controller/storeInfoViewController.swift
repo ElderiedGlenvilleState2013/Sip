@@ -8,8 +8,12 @@
 
 import UIKit
 
-class storeInfoViewController: UIViewController {
-
+class storeInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var storeInfoTableVC: UITableView!
+    
+    private(set) public var product = [DrinkProduct]()
+    
     @IBOutlet var phoneButton: UIButton!
     
     @IBAction func numberButton(_ sender: Any) {
@@ -30,8 +34,9 @@ class storeInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        storeInfoTableVC.dataSource = self
+        storeInfoTableVC.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +44,34 @@ class storeInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func initDrinkProduct(store: Store) {
+        product = DataService.instance.getDrinkProduct(forDrinkTitle: store.title)
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+        return product.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "Drink Cell", for: indexPath) as? drinksCell {
+        let products = product[indexPath.row]
+            cell.updateViews(drinkProduct: products)
+            return cell
+        
+    }
+        
+     return drinksCell()
+        
+}
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+        
+        
+    }
     /*
     // MARK: - Navigation
 

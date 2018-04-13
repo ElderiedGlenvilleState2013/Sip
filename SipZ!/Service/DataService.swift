@@ -44,28 +44,28 @@ class DataService {
     
     func getDrinkProduct(forDrinkTitle title:String) -> [DrinkProduct] {
         switch title {
-        case "BEER":
-           return getBeer()
-        case "WINE":
-            return getWine()
-        case "Liquor":
-            return getLiquor()
+        case "Store One":
+           return getStoresOne()
+        case "Store Two":
+            return getStoresTwo()
+        case "Store Three":
+            return getStoresThree()
         default:
-            return getBeer()
+            return getStoresOne() 
             
         }
         
     }
     
-    func getBeer() -> [DrinkProduct] {
+    func getStoresOne() -> [DrinkProduct] {
         return storesOne
     }
     
-    func getWine() -> [DrinkProduct] {
+    func getStoresTwo() -> [DrinkProduct] {
         return storesTwo
     }
     
-    func getLiquor() -> [DrinkProduct] {
+    func getStoresThree() -> [DrinkProduct] {
         return storesThree
     }
 }

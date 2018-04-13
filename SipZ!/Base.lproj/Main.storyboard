@@ -211,7 +211,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Store List " id="FY8-tE-5Oh"/>
+                    <navigationItem key="navigationItem" title="Store List " id="FY8-tE-5Oh">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="EXN-gJ-sD9">
+                            <connections>
+                                <segue destination="qYx-aA-Bqn" kind="unwind" unwindAction="unwindFromTermsAndConditionsWithUnwindSegue:" id="boi-JA-ykP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="listStoreTableView" destination="tRY-Jn-ulD" id="Z7H-Ga-qNx"/>
                         <segue destination="x1R-Xc-oFP" kind="show" identifier="storeInfoViewController" id="NFg-96-enb"/>
@@ -361,7 +367,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="2cE-qU-bQT" kind="unwind" unwindAction="unwindFromTermsAndConditionsWithUnwindSegue:" id="0en-Ue-6On"/>
+                                                    <segue destination="uaO-Qr-dpo" kind="show" id="rQQ-qQ-i7l"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -431,7 +437,6 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9v-c9-LaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="2cE-qU-bQT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1273.913043478261" y="1556.2500000000002"/>
         </scene>
@@ -531,4 +536,7 @@
         <image name="Bunghole" width="220" height="147"/>
         <image name="two" width="108" height="202"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="9BN-Sp-Lyl"/>
+    </inferredMetricsTieBreakers>
 </document>

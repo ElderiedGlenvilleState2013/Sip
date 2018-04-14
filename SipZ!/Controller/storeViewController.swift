@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import CoreLocation
 
-class storeViewController: UIViewController {
+class storeViewController: UIViewController, CLLocationManagerDelegate {
 
-    
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
 
     @IBAction func unwindFromTermsAndConditions(unwindSegue: UIStoryboardSegue) {
@@ -31,14 +35,14 @@ class storeViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let userLocation: CLLocation = locations[0]
+        
+        let latitude = userLocation.coordinate.latitude
+        
+        print(locations)
+        
     }
-    */
 
 }
